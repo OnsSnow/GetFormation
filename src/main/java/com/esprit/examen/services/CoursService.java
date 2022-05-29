@@ -32,7 +32,7 @@ public class CoursService implements ICoursService {
 	public Long modifierCours(Cours cours) {
 		coursRepository.save(cours);
 		return cours.getId();
-	}
+	}              
 
 	@Override
 	public void supprimerCours(Long coursId) {
@@ -45,6 +45,11 @@ public class CoursService implements ICoursService {
 
 		List<Cours> cours = coursRepository.findAll();
 		return cours;
+	}
+	@Override
+	public Cours getCoursById(Long id) {
+		// TODO Auto-generated method stub
+		return coursRepository.findById(id).orElse(null);
 	}
 
 	@Override
